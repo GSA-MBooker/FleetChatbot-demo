@@ -21,11 +21,10 @@
       text-align: center;
       width: 100%;
     }
-    iframe {
+    #flowise-chatbot {
       width: 100%;
       max-width: 600px;
       height: 600px;
-      border: none;
       margin-top: 2rem;
     }
     footer {
@@ -37,21 +36,23 @@
   </style>
 </head>
 <body>
-
   <header>
     <h1>Agency Chatbot Demo</h1>
     <p>Try out the chatbot experience below</p>
   </header>
-
-  <!-- Replace this src with your real chatbot embed URL later -->
-  <iframe 
-    src="https://typebot.io/demo" 
-    title="Chatbot Demo">
-  </iframe>
+  
+  <div id="flowise-chatbot"></div>
 
   <footer>
     &copy; 2025 Your Agency Name
   </footer>
 
+  <script type="module">
+    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+    Chatbot.init({
+        chatflowid: "3a2b67d0-2dae-4031-a89b-73c83a3f02e4",
+        apiHost: "https://flowise-fleet-chat-demo-backend.onrender.com",
+    })
+  </script>
 </body>
 </html>
